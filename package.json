@@ -1,6 +1,6 @@
 {
   "name": "@yeldirium/telegraf-authentication-middleware",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A telegraf middleware for custom authentication.",
   "keywords": [
     "telegraf",
