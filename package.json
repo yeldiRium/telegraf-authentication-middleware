@@ -1,0 +1,35 @@
+{
+  "name": "@yeldirium/telegraf-authentication-middleware",
+  "version": "0.0.1",
+  "description": "A telegraf middleware for custom authentication.",
+  "keywords": [
+    "telegraf",
+    "telegram",
+    "authentication"
+  ],
+  "main": "src/index.js",
+  "repository": "git@github.com:yeldiRium/telegraf-authentication-middleware.git",
+  "author": {
+    "name": "Hannes Leutloff",
+    "email": "hannes.leutloff@thenativeweb.io",
+    "url": "https://yeldirium.de/"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "prettier --check src/**/*.js",
+    "test": "yarn run lint && jest",
+    "publish-patch": "yarn test && yarn version --patch && git push --tags && git push",
+    "publish-minor": "yarn test && yarn version --minor && git push --tags && git push",
+    "publish-major": "yarn test && yarn version --major && git push --tags && git push"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2"
+  },
+  "peerDependencies": {
+    "telegraf": "^3.32.0"
+  }
+}
