@@ -9,7 +9,7 @@ describe("telegraf-authentication-middleware", () => {
       expect(token).toEqual(token);
       return userObject;
     });
-    const { middleware, getAuthenticatedUser } = await makeAuthenticator({
+    const { middleware, getAuthenticatedUser } = makeAuthenticator({
       authenticator
     });
 
@@ -68,7 +68,7 @@ describe("telegraf-authentication-middleware", () => {
     const authenticatedUsers = new Map();
     authenticatedUsers.set(userId, userObject);
 
-    const { middleware, getAuthenticatedUsers } = await makeAuthenticator({
+    const { middleware, getAuthenticatedUsers } = makeAuthenticator({
       authenticator: jest.fn(),
       authenticatedUsers
     });

@@ -10,7 +10,7 @@ const guardMiddleware = require("./guardMiddleware");
 const loginCommand = require("./commands/login");
 const logoutCommand = require("./commands/logout");
 
-const makeAuthenticator = async ({
+const makeAuthenticator = ({
   authenticator,
   authenticatedUsers = new Map(),
   loginFailedHandler = defaultLoginFailedHandler,
