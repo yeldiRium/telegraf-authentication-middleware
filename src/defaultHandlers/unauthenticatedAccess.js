@@ -1,4 +1,4 @@
-const unauthenticatedAccess = ({ ctx }) => {
+const unauthenticatedAccessHandler = ({ ctx }) => {
   if (!ctx) {
     throw new Error("Ctx is missing.");
   }
@@ -6,4 +6,4 @@ const unauthenticatedAccess = ({ ctx }) => {
   ctx.reply("You cannot do this without logging in first.");
 };
 
-module.exports = unauthenticatedAccess;
+module.exports = unauthenticatedAccessHandler;

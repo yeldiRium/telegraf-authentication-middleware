@@ -20,7 +20,7 @@ const guardMiddleware = ({ unauthenticatedAccessHandler }) => {
     }
 
     if (ctx.user === undefined) {
-      await unauthenticatedAccessHandler();
+      await unauthenticatedAccessHandler({ ctx });
       return;
     }
 
