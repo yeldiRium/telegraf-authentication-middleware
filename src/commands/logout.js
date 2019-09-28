@@ -1,3 +1,14 @@
+/**
+ * Returns a telegraf middleware that removes the user from the
+ * `authenticatedUsers` or calls the `logoutRedundantHandler` if the user is not
+ * logged in.
+ *
+ * @param {Map}      authenticatedUsers     A map of authenticated users.
+ * @param {Function} logoutHandler          A handler that is called when the
+ *                                          login fails. May be asynchronous.
+ * @param {Function} logoutRedundantHandler A handler that is called when the
+ *                                          login fails. May be asynchronous.
+ */
 const logout = ({
   authenticatedUsers,
   logoutHandler,

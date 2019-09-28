@@ -1,3 +1,9 @@
+/**
+ * Checks if the given command is present in the text message in the context.
+ *
+ * @param {*}      ctx     Telegraf message context.
+ * @param {String} command The command to check for.
+ */
 const contextHasCommand = ({ ctx, command }) => {
   if (!ctx) {
     throw new Error("Ctx is missing.");
