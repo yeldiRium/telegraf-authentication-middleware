@@ -33,6 +33,8 @@ const makeAuthenticator = ({
       throw new Error("Next is missing.");
     }
 
+    let hasProcessedCommand = false;
+
     if (contextHasCommand({ ctx, command: "login" })) {
       await loginCommand({
         authenticator,
@@ -42,6 +44,8 @@ const makeAuthenticator = ({
         loginRedundantHandler,
         loginHelpHandler
       })(ctx, next);
+
+      hasProcessedCommand = true;
     }
 
     if (contextHasCommand({ ctx, command: "logout" })) {
@@ -50,12 +54,18 @@ const makeAuthenticator = ({
         logoutHandler,
         logoutRedundantHandler
       })(ctx, next);
+
+      hasProcessedCommand = true;
     }
 
     const userId = ctx.from.id;
     const user = authenticatedUsers.get(userId);
     if (user !== undefined) {
       ctx.user = user;
+    }
+
+    if (hasProcessedCommand) {
+      return;
     }
 
     return next();
