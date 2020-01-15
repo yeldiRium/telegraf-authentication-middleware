@@ -5,7 +5,7 @@ describe("telegraf-authentication-middleware", () => {
     const userId = "some-id";
     const userObject = {};
     const token = "something";
-    const authenticator = jest.fn(({ token, userId }) => {
+    const authenticator = jest.fn(({ token }) => {
       expect(token).toEqual(token);
       return userObject;
     });

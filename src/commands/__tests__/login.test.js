@@ -54,11 +54,13 @@ describe("login command", () => {
   });
 
   it(`returns a function that throws an error if parameter ctx is missing`, async () => {
-    expect(loginCommand(loginParams)(undefined, jest.fn())).rejects.toThrow();
+    await expect(
+      loginCommand(loginParams)(undefined, jest.fn())
+    ).rejects.toThrow();
   });
 
   it(`returns a function that throws an error if parameter next is missing`, async () => {
-    expect(loginCommand(loginParams)({})).rejects.toThrow();
+    await expect(loginCommand(loginParams)({})).rejects.toThrow();
   });
 
   describe("login middleware", () => {

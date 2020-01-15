@@ -51,11 +51,13 @@ describe("logout command", () => {
   });
 
   it(`returns a function that throws an error if parameter ctx is missing`, async () => {
-    expect(logoutCommand(logoutParams)(undefined, jest.fn())).rejects.toThrow();
+    await expect(
+      logoutCommand(logoutParams)(undefined, jest.fn())
+    ).rejects.toThrow();
   });
 
   it(`returns a function that throws an error if parameter next is missing`, async () => {
-    expect(logoutCommand(logoutParams)({})).rejects.toThrow();
+    await expect(logoutCommand(logoutParams)({})).rejects.toThrow();
   });
 
   describe("logout middleware", () => {

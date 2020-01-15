@@ -1,5 +1,7 @@
 # Telegraf Authentication Middleware
 
+A simple authentication middleware for the [telegraf](https://github.com/telegraf/telegraf) framework.
+
 ```sh
 npm install @yeldirium/telegraf-authentication-middleware
 # or
@@ -8,12 +10,13 @@ yarn install @yeldirium/telegraf-authentication-middleware
 
 ## Status
 
-| Category         | Status                                                                                                                                                                                                         |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version          | [![npm version](http://img.shields.io/npm/v/@yeldirium/telegraf-authentication-middleware.svg?style=flat)](https://npmjs.org/package/@yeldirium/telegraf-authentication-middleware "View this project on npm") |
-| Dependencies     | ![David](https://img.shields.io/david/yeldirium/telegraf-authentication-middleware)                                                                                                                            |
-| Dev dependencies | ![David](https://img.shields.io/david/dev/yeldirium/telegraf-authentication-middleware)                                                                                                                        |
-| Build            | [![Build Status](https://travis-ci.org/yeldiRium/telegraf-authentication-middleware.svg?branch=master)](https://travis-ci.org/yeldiRium/telegraf-authentication-middleware)                                    |
+| Category         | Status                                                                                                                                                            |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version          | [![npm](https://img.shields.io/npm/v/@yeldirium/telegraf-authentication-middleware)](https://www.npmjs.com/package/@yeldirium/telegraf-authentication-middleware) |
+| Dependencies     | ![David](https://img.shields.io/david/yeldirium/telegraf-authentication-middleware)                                                                               |
+| Dev dependencies | ![David](https://img.shields.io/david/dev/yeldirium/telegraf-authentication-middleware)                                                                           |
+| Build            | ![GitHub Actions](https://github.com/yeldiRium/telegraf-authentication-middleware/workflows/Release/badge.svg?branch=master)                                      |
+| License          | ![GitHub](https://img.shields.io/github/license/yeldiRium/telegraf-authentication-middleware)                                                                     |
 
 # Why this module?
 
