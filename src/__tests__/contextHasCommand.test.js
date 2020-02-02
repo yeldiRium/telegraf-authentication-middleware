@@ -16,6 +16,7 @@ describe("contextHasCommand", () => {
   it("returns true if the context is of type message and the message starts with /{command}", async () => {
     const ctx = {
       updateType: "message",
+      updateSubTypes: ["text"],
       message: {
         text: "/test bli bla blub"
       }
@@ -25,9 +26,10 @@ describe("contextHasCommand", () => {
     expect(contextHasCommand({ ctx, command })).toEqual(true);
   });
 
-  it("returns false if the context is not of type message", async () => {
+  it("returns false if the context is not a text message", async () => {
     const ctx = {
-      updateType: "blub",
+      updateType: "message",
+      updateSubTypes: ["nottext"],
       message: {
         text: "/test bli bla blub"
       }
@@ -40,6 +42,7 @@ describe("contextHasCommand", () => {
   it("returns false if the message does not start with /{command}", async () => {
     const ctx = {
       updateType: "message",
+      updateSubTypes: ["text"],
       message: {
         text: "uiae eaui"
       }

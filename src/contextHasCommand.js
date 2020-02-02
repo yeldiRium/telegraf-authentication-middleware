@@ -13,7 +13,9 @@ const contextHasCommand = ({ ctx, command }) => {
   }
 
   return (
-    ctx.updateType === "message" && ctx.message.text.startsWith(`/${command}`)
+    ctx.updateType === "message" &&
+    ctx.updateSubTypes.includes("text") &&
+    ctx.message.text.startsWith(`/${command}`)
   );
 };
 

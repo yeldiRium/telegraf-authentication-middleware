@@ -15,6 +15,7 @@ describe("telegraf-authentication-middleware", () => {
 
     const loginCtx = {
       updateType: "message",
+      updateSubTypes: ["text"],
       from: {
         id: userId
       },
@@ -47,6 +48,7 @@ describe("telegraf-authentication-middleware", () => {
 
     const logoutCtx = {
       updateType: "message",
+      updateSubTypes: ["text"],
       from: {
         id: userId
       },
