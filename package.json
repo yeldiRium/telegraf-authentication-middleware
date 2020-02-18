@@ -34,7 +34,7 @@
     "eslint-plugin-prettier": "3.1.2",
     "jest": "25.1.0",
     "prettier": "1.19.1",
-    "semantic-release": "17.0.3"
+    "semantic-release": "17.0.4"
   },
   "peerDependencies": {
     "telegraf": "3.32.0"
