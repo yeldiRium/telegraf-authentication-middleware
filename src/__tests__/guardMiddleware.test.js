@@ -23,7 +23,7 @@ describe("guard middleware", () => {
   it("calls next if a user is in the ctx", async () => {
     const unauthenticatedAccessHandler = jest.fn();
     const ctx = {
-      user: {}
+      user: {},
     };
     const next = jest.fn();
 

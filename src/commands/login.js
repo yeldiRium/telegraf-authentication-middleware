@@ -26,7 +26,7 @@ const login = ({
   loginFailedHandler,
   loginSucceededHandler,
   loginRedundantHandler,
-  loginHelpHandler
+  loginHelpHandler,
 }) => {
   if (!authenticator) {
     throw new Error("Authenticator is missing.");
@@ -47,7 +47,7 @@ const login = ({
     throw new Error("Login help handler is missing.");
   }
 
-  return async ctx => {
+  return async (ctx) => {
     if (!ctx) {
       throw new Error("Ctx is missing.");
     }
@@ -68,13 +68,13 @@ const login = ({
 
     const user = await authenticator({
       token: token,
-      userId
+      userId,
     });
 
     if (user === null || user === undefined) {
       await loginFailedHandler({
         ctx,
-        token: token
+        token: token,
       });
       return;
     }
@@ -83,7 +83,7 @@ const login = ({
 
     await loginSucceededHandler({
       ctx,
-      token: token
+      token: token,
     });
   };
 };

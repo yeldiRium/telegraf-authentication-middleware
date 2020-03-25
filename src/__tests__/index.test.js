@@ -10,19 +10,19 @@ describe("telegraf-authentication-middleware", () => {
       return userObject;
     });
     const { middleware, getAuthenticatedUser } = makeAuthenticator({
-      authenticator
+      authenticator,
     });
 
     const loginCtx = {
       updateType: "message",
       updateSubTypes: ["text"],
       from: {
-        id: userId
+        id: userId,
       },
       message: {
-        text: `/login ${token}`
+        text: `/login ${token}`,
       },
-      reply: jest.fn()
+      reply: jest.fn(),
     };
     const next = () => {};
 
@@ -34,12 +34,12 @@ describe("telegraf-authentication-middleware", () => {
     const anyCtx = {
       updateType: "blub",
       from: {
-        id: userId
+        id: userId,
       },
       message: {
-        text: "irrelevant"
+        text: "irrelevant",
       },
-      reply: jest.fn()
+      reply: jest.fn(),
     };
 
     await middleware(anyCtx, next);
@@ -50,12 +50,12 @@ describe("telegraf-authentication-middleware", () => {
       updateType: "message",
       updateSubTypes: ["text"],
       from: {
-        id: userId
+        id: userId,
       },
       message: {
-        text: "/logout"
+        text: "/logout",
       },
-      reply: jest.fn()
+      reply: jest.fn(),
     };
 
     await middleware(logoutCtx, next);
@@ -72,18 +72,18 @@ describe("telegraf-authentication-middleware", () => {
 
     const { middleware, getAuthenticatedUsers } = makeAuthenticator({
       authenticator: jest.fn(),
-      authenticatedUsers
+      authenticatedUsers,
     });
 
     const anyCtx = {
       updateType: "blub",
       from: {
-        id: userId
+        id: userId,
       },
       message: {
-        text: "irrelevant"
+        text: "irrelevant",
       },
-      reply: jest.fn()
+      reply: jest.fn(),
     };
     const next = () => {};
 

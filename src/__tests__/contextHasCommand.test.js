@@ -18,8 +18,8 @@ describe("contextHasCommand", () => {
       updateType: "message",
       updateSubTypes: ["text"],
       message: {
-        text: "/test bli bla blub"
-      }
+        text: "/test bli bla blub",
+      },
     };
     const command = "test";
 
@@ -31,8 +31,8 @@ describe("contextHasCommand", () => {
       updateType: "message",
       updateSubTypes: ["nottext"],
       message: {
-        text: "/test bli bla blub"
-      }
+        text: "/test bli bla blub",
+      },
     };
     const command = "test";
 
@@ -44,8 +44,8 @@ describe("contextHasCommand", () => {
       updateType: "message",
       updateSubTypes: ["text"],
       message: {
-        text: "uiae eaui"
-      }
+        text: "uiae eaui",
+      },
     };
     const command = "test";
 

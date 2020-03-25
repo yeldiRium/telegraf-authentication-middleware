@@ -2,12 +2,12 @@ const logoutCommand = require("../logout");
 
 const dummyContext = (userId, message) => ({
   from: {
-    id: userId
+    id: userId,
   },
   message: {
-    text: message
+    text: message,
   },
-  reply: jest.fn()
+  reply: jest.fn(),
 });
 
 describe("logout command", () => {
@@ -22,7 +22,7 @@ describe("logout command", () => {
     logoutParams = {
       authenticatedUsers: new Map(),
       logoutHandler: jest.fn(),
-      logoutRedundantHandler: jest.fn()
+      logoutRedundantHandler: jest.fn(),
     };
   };
   const resetMiddlewareParams = () => {
@@ -36,11 +36,11 @@ describe("logout command", () => {
     resetMiddlewareParams();
   });
 
-  Object.keys(logoutParams).forEach(key => {
+  Object.keys(logoutParams).forEach((key) => {
     it(`throws an error if parameter ${key} is missing`, async () => {
       const paramsWithoutKey = {
         ...logoutParams,
-        [key]: undefined
+        [key]: undefined,
       };
       expect(() => logoutCommand(paramsWithoutKey)).toThrow();
     });
@@ -72,7 +72,7 @@ describe("logout command", () => {
       const userId = "some-id";
       const customMiddlewareParams = [
         dummyContext(userId, "/logout"),
-        middlewareParams[1]
+        middlewareParams[1],
       ];
 
       await middleware(...customMiddlewareParams);
@@ -86,7 +86,7 @@ describe("logout command", () => {
       logoutParams.authenticatedUsers.set(userId, userObject);
       const customMiddlewareParams = [
         dummyContext(userId, "/logout"),
-        middlewareParams[1]
+        middlewareParams[1],
       ];
 
       await middleware(...customMiddlewareParams);
