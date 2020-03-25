@@ -19,7 +19,7 @@ const makeAuthenticator = ({
   loginRedundantHandler = defaultLoginRedundantHandler,
   logoutHandler = defaultLogoutHandler,
   logoutRedundantHandler = defaultLogoutRedundantHandler,
-  unauthenticatedAccessHandler = defaultUnauthenticatedAccessHandler
+  unauthenticatedAccessHandler = defaultUnauthenticatedAccessHandler,
 }) => {
   if (!authenticator) {
     throw new Error("Authenticator is missing.");
@@ -42,7 +42,7 @@ const makeAuthenticator = ({
         loginFailedHandler,
         loginSucceededHandler,
         loginRedundantHandler,
-        loginHelpHandler
+        loginHelpHandler,
       })(ctx, next);
 
       hasProcessedCommand = true;
@@ -52,7 +52,7 @@ const makeAuthenticator = ({
       await logoutCommand({
         authenticatedUsers,
         logoutHandler,
-        logoutRedundantHandler
+        logoutRedundantHandler,
       })(ctx, next);
 
       hasProcessedCommand = true;
@@ -84,14 +84,14 @@ const makeAuthenticator = ({
   };
 
   const guard = guardMiddleware({
-    unauthenticatedAccessHandler
+    unauthenticatedAccessHandler,
   });
 
   return {
     middleware,
     getAuthenticatedUser,
     getAuthenticatedUsers,
-    guardMiddleware: guard
+    guardMiddleware: guard,
   };
 };
 

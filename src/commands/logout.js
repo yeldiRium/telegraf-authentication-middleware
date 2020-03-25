@@ -12,7 +12,7 @@
 const logout = ({
   authenticatedUsers,
   logoutHandler,
-  logoutRedundantHandler
+  logoutRedundantHandler,
 }) => {
   if (!authenticatedUsers) {
     throw new Error("Authenticated users are missing.");

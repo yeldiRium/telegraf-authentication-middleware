@@ -2,12 +2,12 @@ const loginCommand = require("../login");
 
 const dummyContext = (userId, message) => ({
   from: {
-    id: userId
+    id: userId,
   },
   message: {
-    text: message
+    text: message,
   },
-  reply: jest.fn()
+  reply: jest.fn(),
 });
 
 describe("login command", () => {
@@ -25,7 +25,7 @@ describe("login command", () => {
       loginFailedHandler: jest.fn(),
       loginSucceededHandler: jest.fn(),
       loginRedundantHandler: jest.fn(),
-      loginHelpHandler: jest.fn()
+      loginHelpHandler: jest.fn(),
     };
   };
   const resetMiddlewareParams = () => {
@@ -39,11 +39,11 @@ describe("login command", () => {
     resetMiddlewareParams();
   });
 
-  Object.keys(loginParams).forEach(key => {
+  Object.keys(loginParams).forEach((key) => {
     it(`throws an error if parameter ${key} is missing`, async () => {
       const paramsWithoutKey = {
         ...loginParams,
-        [key]: undefined
+        [key]: undefined,
       };
       expect(() => loginCommand(paramsWithoutKey)).toThrow();
     });
@@ -75,7 +75,7 @@ describe("login command", () => {
       const userId = "some-id";
       const customMiddlewareParams = [
         dummyContext(userId, "/login"),
-        middlewareParams[1]
+        middlewareParams[1],
       ];
 
       await middleware(...customMiddlewareParams);
@@ -89,7 +89,7 @@ describe("login command", () => {
 
       const customMiddlewareParams = [
         dummyContext(userId, "/login something"),
-        middlewareParams[1]
+        middlewareParams[1],
       ];
 
       await middleware(...customMiddlewareParams);
@@ -108,7 +108,7 @@ describe("login command", () => {
 
       const customMiddlewareParams = [
         dummyContext(userId, "/login something"),
-        middlewareParams[1]
+        middlewareParams[1],
       ];
 
       await middleware(...customMiddlewareParams);
@@ -117,7 +117,7 @@ describe("login command", () => {
       expect(loginParams.loginRedundantHandler).not.toHaveBeenCalled();
       expect(loginParams.authenticator).toHaveBeenCalledWith({
         userId,
-        token: "something"
+        token: "something",
       });
       expect(loginParams.authenticatedUsers.get(userId)).toBe(userObject);
       expect(loginParams.loginSucceededHandler).toHaveBeenCalled();
@@ -130,7 +130,7 @@ describe("login command", () => {
 
       const customMiddlewareParams = [
         dummyContext(userId, "/login something"),
-        middlewareParams[1]
+        middlewareParams[1],
       ];
 
       await middleware(...customMiddlewareParams);
