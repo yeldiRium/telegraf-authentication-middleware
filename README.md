@@ -20,11 +20,11 @@ yarn install @yeldirium/telegraf-authentication-middleware
 
 # Why this module?
 
-If you have a telegram application and want to let your users login to a sission
+If you have a telegram application and want to let your users login to a session
 via `/login <token>` and logout via `/logout` and supply the authentication
 method by yourself, then this is for you.
 You provide a way to authenticate users based on user id and login token and you
-may provide a number of handlers for the various of the login/logout process.
+may provider a number of handlers for various interactions during the login/logout process.
 
 # How to use it?
 
