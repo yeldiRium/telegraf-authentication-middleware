@@ -35,7 +35,7 @@
     "jest": "26.1.0",
     "jest": "26.0.1",
     "prettier": "2.0.5",
-    "semantic-release": "17.0.8"
+    "semantic-release": "17.1.1"
   },
   "peerDependencies": {
     "telegraf": "3.32.0"
