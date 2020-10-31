@@ -37,6 +37,6 @@
     "semantic-release": "17.2.2"
   },
   "peerDependencies": {
-    "telegraf": "3.32.0"
+    "telegraf": "^3.38.0"
   }
 }
