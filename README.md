@@ -48,7 +48,7 @@ const bot = telegraf(token);
 bot.use(middleware);
 
 // The guardMiddleware terminates the request if no user is logged in.
-bot.command("restricted", guardMiddleware(), ctx => {
+bot.command("restricted", guardMiddleware, ctx => {
   console.log(ctx.user); // The currently logged in user.
 });
 ```
