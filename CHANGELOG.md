@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/yeldiRium/telegraf-authentication-middleware/compare/v1.1.3...v1.1.4) (2020-10-31)
+
+
+### Bug Fixes
+
+* Bump telegraf peer dependency version. ([2cfa3a2](https://github.com/yeldiRium/telegraf-authentication-middleware/commit/2cfa3a211882678e710d7a89dbc9e676c1d0d28c))
+
 ## [1.1.3](https://github.com/yeldiRium/telegraf-authentication-middleware/compare/v1.1.2...v1.1.3) (2020-05-29)
 
 
