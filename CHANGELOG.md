@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/yeldiRium/telegraf-authentication-middleware/compare/v1.1.4...v1.1.5) (2020-10-31)
+
+
+### Bug Fixes
+
+* Fix typo in readme that was really bad. ([bd841e6](https://github.com/yeldiRium/telegraf-authentication-middleware/commit/bd841e68255ec86379dca673f628681a9b9d43b2))
+
 ## [1.1.4](https://github.com/yeldiRium/telegraf-authentication-middleware/compare/v1.1.3...v1.1.4) (2020-10-31)
 
 
