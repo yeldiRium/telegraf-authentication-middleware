@@ -1,0 +1,61 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  assignees:
+  - yeldiRium
+  labels:
+  - Dependencies
+  versioning-strategy: increase
+  allow:
+  - dependency-type: direct
+  ignore:
+  - dependency-name: eslint-config-prettier
+    versions:
+    - 7.2.0
+    - 8.0.0
+    - 8.1.0
+    - 8.2.0
+  - dependency-name: eslint-plugin-jest
+    versions:
+    - 24.1.10
+    - 24.1.4
+    - 24.1.5
+    - 24.1.6
+    - 24.1.7
+    - 24.1.8
+    - 24.1.9
+    - 24.2.0
+    - 24.2.1
+    - 24.3.0
+    - 24.3.1
+    - 24.3.2
+    - 24.3.3
+    - 24.3.4
+    - 24.3.5
+  - dependency-name: eslint
+    versions:
+    - 7.18.0
+    - 7.19.0
+    - 7.20.0
+    - 7.21.0
+    - 7.22.0
+    - 7.23.0
+    - 7.24.0
+  - dependency-name: semantic-release
+    versions:
+    - 17.3.7
+    - 17.3.8
+    - 17.3.9
+    - 17.4.0
+    - 17.4.1
+  - dependency-name: eslint-plugin-prettier
+    versions:
+    - 3.3.1
+  commit-message:
+    prefix: fix
+    prefix-development: chore
